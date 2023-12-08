@@ -1,3 +1,7 @@
+contents sa backend naa tanan sa my-react-app/src/Components/Assets
+/all_product.js ug other .js na naa sa assets
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
