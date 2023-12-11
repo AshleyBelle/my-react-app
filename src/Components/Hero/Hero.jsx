@@ -1,3 +1,5 @@
+//Line 26:13: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images
+
 import React from 'react'
 import './Hero.css'
 import hand_icon from '../Assets/hand_icon.png'
