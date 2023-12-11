@@ -1,7 +1,7 @@
 //error Can't resolve '..Assets/breadcrum_arrow.png' in 'C:\Users\Princess Halina\Desktop\ITelect4GROOUPROJECT\my-react-app\src\Components\Breadcrums'
 import React from 'react'
 import './Breadcrum.css'
-import arrow_icon from '..Assets/breadcrum_arrow.png'
+import arrow_icon from '../Assets/breadcrum_arrow.png';
 
 const Breadcrum = (props) => {
     const {product} = props;
