@@ -12,6 +12,9 @@ import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
 import Footer from './Components/Footer/Footer';
+import UserList from './Pages/UserList';
+import Transaction from './Pages/Transaction';
+import AddProduct from './Pages/AddProduct'
 //elements of the navbar
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/Sign-Up' element={<Register/>}/>
+          <Route path='/userlist' element={<UserList/>}/>
+          <Route path='/transaction' element={<Transaction/>}/>
+          <Route path='/addproduct' element={<AddProduct/>}/>
       </Routes>
         <Footer/>
       </BrowserRouter>
