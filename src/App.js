@@ -15,6 +15,7 @@ import Footer from './Components/Footer/Footer';
 import UserList from './Pages/UserList';
 import Transaction from './Pages/Transaction';
 import AddProduct from './Pages/AddProduct'
+import ProductList from './Pages/ProductList';
 //elements of the navbar
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path='/userlist' element={<UserList/>}/>
           <Route path='/transaction' element={<Transaction/>}/>
           <Route path='/addproduct' element={<AddProduct/>}/>
+          <Route path='/productlist' element={<ProductList/>}/>
       </Routes>
         <Footer/>
       </BrowserRouter>
