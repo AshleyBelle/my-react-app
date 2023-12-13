@@ -30,8 +30,6 @@ const ProductList = () => {
             <p>{product.productCategory}</p>
             <p>{product.new_price}</p>
             <p>{product.old_price}</p>
-            
-        <h1></h1>
         </div>
       ))}
       </div>
