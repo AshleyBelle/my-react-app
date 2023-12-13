@@ -5,12 +5,18 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom' ;
 import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
-import LoginSignup from './Pages/LoginSignup';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 import Cart from './Pages/Cart';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
 import Footer from './Components/Footer/Footer';
+import UserList from './Pages/UserList';
+import Transaction from './Pages/Transaction';
+import AddProduct from './Pages/AddProduct'
+import ProductList from './Pages/ProductList';
+//import TestSubject from './Pages/TestSubject';
 //elements of the navbar
 
 function App() {
@@ -27,7 +33,13 @@ function App() {
           <Route path=':productId' element={<Product/>}/>
           </Route>
           <Route path='/cart' element={<Cart/>}/>
-          <Route path='/login' element={<LoginSignup/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/Sign-Up' element={<Register/>}/>
+          <Route path='/userlist' element={<UserList/>}/>
+          <Route path='/transaction' element={<Transaction/>}/>
+          <Route path='/addproduct' element={<AddProduct/>}/>
+          <Route path='/productlist' element={<ProductList/>}/>
+          {/*<Route path='/Testsubject' element={<TestSubject/>}/>*/}
       </Routes>
         <Footer/>
       </BrowserRouter>
