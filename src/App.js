@@ -16,6 +16,7 @@ import UserList from './Pages/UserList';
 import Transaction from './Pages/Transaction';
 import AddProduct from './Pages/AddProduct'
 import ProductList from './Pages/ProductList';
+import UpdateProduct from './Pages/UpdateProduct';
 //import TestSubject from './Pages/TestSubject';
 //elements of the navbar
 
@@ -34,11 +35,12 @@ function App() {
           </Route>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/Sign-Up' element={<Register/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path='/userlist' element={<UserList/>}/>
           <Route path='/transaction' element={<Transaction/>}/>
           <Route path='/addproduct' element={<AddProduct/>}/>
           <Route path='/productlist' element={<ProductList/>}/>
+          <Route path='/updateproduct' element={<UpdateProduct/>}/>
           {/*<Route path='/Testsubject' element={<TestSubject/>}/>*/}
       </Routes>
         <Footer/>

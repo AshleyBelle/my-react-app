@@ -17,8 +17,7 @@ const Login = () => {
       });
 
       const data = response.data;
-      console.log(data); // Handle the response accordingly, e.g., set user state or show an error message
-      //check if login was successful then main page "/"
+      console.log(data); 
       if (data === 'Login successful'){
         navigate('/');
       } else{

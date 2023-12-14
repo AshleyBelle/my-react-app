@@ -1,0 +1,29 @@
+h1{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 35px;
+}
+
+.users-table {
+    width: 100%;
+    border-style: none;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+  }
+  
+ /*
+ .users-table th, .users-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .users-table th {
+    background-color: #f2f2f2;
+  }
+ */ 
+  
+
