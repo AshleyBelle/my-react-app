@@ -15,20 +15,47 @@ const ProductList = () => {
       })
   }, []);
 
+  const handleDelete = async (productID) => {
+    try{
+      await axios.delete("http://localhost:3000/products/"+ productID)
+      window.location.reload()
+    }catch(err){
+      console.log(err)
+    }
+  };
+
   return (
     <div>
       <h1>Product Items</h1>
-      <div className="products">
-      {products.map(product => (
-        <div key={product.productID}>
-            <img src={product.image} alt={product.productName}/>
-            <h1>{product.productName}</h1>
-            <p>Category:{product.productCategory}</p>
-            <p>New price:{product.new_price}</p>
-            <p>Old price:{product.old_price}</p>
-        </div>
-      ))}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>New Price</th>
+            <th>Old Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map(product => (
+            <tr key={product.productID}>
+              <td>
+                {/*<img src={product.image} alt={product.productName} style={{ width: '50px', height: '50px' }} />*/}
+                <p>{product.imageName}</p> {/* Show the name of the image */}
+              </td>
+              <td>{product.productName}</td>
+              <td>{product.productCategory}</td>
+              <td>{product.new_price}</td>
+              <td>{product.old_price}</td>
+              <td>
+              <button className="delete" onClick={() => handleDelete(product.productID)}>Delete</button>
+              <button className="update"><Link to={`/updateproduct`}>Update</Link></button>
+              </td>   
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <button>
         <Link to="/addproduct">Add </Link>
       </button>
@@ -37,7 +64,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
-/*
-
-*/

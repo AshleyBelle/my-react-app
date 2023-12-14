@@ -6,7 +6,6 @@ const AddProduct = () => {
   const [price, setPrice] = useState('');
 
   const handleAddProduct = async () => {
-    // Ensure that all required fields are filled
     if (!productName || !productCategory || !price) {
       alert('Please fill in all fields');
       return;
@@ -78,3 +77,53 @@ const AddProduct = () => {
 };
 
 export default AddProduct;
+
+/*
+const AddProduct = () => {
+  const [product, setProduct] = useState({
+    productName: "",
+    productCategory: "",
+    image: ""
+
+  })
+
+  return (
+    <div className='form'>
+      <h1>Add Product</h1>
+      <label>
+        Enter product name:
+        <input
+          type='text'
+          placeholder='Enter product name'
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
+        />
+      </label>
+      <label>
+        Choose Product Category:
+        <select
+          name='productCategory'
+          value={productCategory}
+          onChange={(e) => setProductCategory(e.target.value)}
+        >
+          <option value=''>Choose Product Category...</option>
+          <option value='Men'>Men</option>
+          <option value='Women'>Women</option>
+          <option value='Kids'>Kids</option>
+        </select>
+      </label>
+      <label>
+        Enter price:
+        <input
+          type='number'
+          placeholder='Enter price'
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+      </label>
+      <button onClick={handleAddProduct}>Add Product</button>
+    </div>
+  );
+};
+
+*/
