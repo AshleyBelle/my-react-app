@@ -6,17 +6,13 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchAllProducts = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/product");
-
-        setProducts(res.data); // Set the products in state
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchAllProducts(); // Call the function to fetch products
+    axios.get('http://localhost:3000/products')  
+      .then(response => {
+        setProducts(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }, []);
 
   return (
@@ -24,12 +20,12 @@ const ProductList = () => {
       <h1>Product Items</h1>
       <div className="products">
       {products.map(product => (
-        <div className="product" key={product.productID}>
-            {product.image_path && <img src={product.image_path} alt=''/>}
+        <div key={product.productID}>
+            <img src={product.image} alt={product.productName}/>
             <h1>{product.productName}</h1>
-            <p>{product.productCategory}</p>
-            <p>{product.new_price}</p>
-            <p>{product.old_price}</p>
+            <p>Category:{product.productCategory}</p>
+            <p>New price:{product.new_price}</p>
+            <p>Old price:{product.old_price}</p>
         </div>
       ))}
       </div>
@@ -41,3 +37,7 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+/*
+
+*/

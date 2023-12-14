@@ -43,3 +43,4 @@ const UserList = () => {
 };
 
 export default UserList
+// needed css side for the display of the table
