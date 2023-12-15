@@ -107,4 +107,3 @@ const UpdateProduct = () => {
 };
 
 export default UpdateProduct;
-//update product listed
