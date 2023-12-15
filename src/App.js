@@ -40,7 +40,7 @@ function App() {
           <Route path='/transaction' element={<Transaction/>}/>
           <Route path='/addproduct' element={<AddProduct/>}/>
           <Route path='/productlist' element={<ProductList/>}/>
-          <Route path='/updateproduct' element={<UpdateProduct/>}/>
+          <Route path='/updateproduct/:productID' element={<UpdateProduct/>}/>
           {/*<Route path='/Testsubject' element={<TestSubject/>}/>*/}
       </Routes>
         <Footer/>

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const UpdateProduct = () => {
-  // Corrected the destructuring to match the route parameter name
   const { productID } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({
     productName: '',
     productCategory: '',
-    price: '',
+    new_price: '',
+    old_price: '',
+    image: '',
   });
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const UpdateProduct = () => {
   }, [productID]);
 
   const handleUpdateProduct = async () => {
-    if (!product.productName || !product.productCategory || !product.price) {
+    if (!product.productName || !product.productCategory || !product.new_price || !product.oldPrice) {
       alert('Please fill in all fields');
       return;
     }
@@ -49,6 +50,8 @@ const UpdateProduct = () => {
         body: JSON.stringify({
           productName: product.productName,
           productCategory: product.productCategory,
+          image: product.image,
+          old_price: parseFloat(product.oldPrice),
           new_price: parseFloat(product.price),
         }),
       });
@@ -101,8 +104,26 @@ const UpdateProduct = () => {
         Enter price:
         <input
           type='number'
-          name='price'
-          value={product.price}
+          name='new_price'
+          value={product.new_price}
+          onChange={handleInputChange}
+        />
+      </label>
+      <label>
+        Enter old price:
+        <input
+          type='number'
+          name='old_price'
+          value={product.oldPrice}
+          onChange={handleInputChange}
+        />
+      </label>
+      <label>
+        Enter image URL:
+        <input
+          type='text'
+          name='image'
+          value={product.image}
           onChange={handleInputChange}
         />
       </label>

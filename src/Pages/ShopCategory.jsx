@@ -1,10 +1,8 @@
-//error: all_product' is defined but never used
-import React, {useContext} from 'react'
-import './CSS/ShopCategory.css'
+import React, {useContext} from 'react';
+import './CSS/ShopCategory.css';
 import { ShopContext } from '../Components/Context/ShopContext';
-import dropdown_icon from '../Components/Assets/dropdown_icon.png'
+import dropdown_icon from '../Components/Assets/dropdown_icon.png';
 import Item from '../Components/Item/Item';
-//import { AllProduct } from '../Components/Assets/AllProduct';
 
 const ShopCategory = (props) => {
   const { AllProduct } = useContext(ShopContext);
@@ -28,6 +26,9 @@ const ShopCategory = (props) => {
             return null;
           }
         })}
+      </div>
+      <div className="shopcategory-loadmore">
+        Explore More
       </div>
     </div>
   )

@@ -12,6 +12,10 @@ const getDefaultCart = ()=>{
     return cart;
 }
 
+const getTotalCartItems = (cartItems) => {
+    return Object.values(cartItems).reduce((total, count) => total + count, 0);
+  };
+
 const ShopContextProvider = (props) => {
 
     const [cartItems,setCartItems] = useState(getDefaultCart());
@@ -27,8 +31,7 @@ const ShopContextProvider = (props) => {
     }
 
     const contextValue = {
-        //getTotalCartItems,
-        //getTotalCartAmount,
+        getTotalCartItems: () => getTotalCartItems(cartItems),
         AllProduct, 
         cartItems,
         addToCart,
