@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const UpdateProduct = () => {
-  const { productId } = useParams();
-  const navigate = useNavigate(); // Use useNavigate instead of history
+  // Corrected the destructuring to match the route parameter name
+  const { productID } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState({
     productName: '',
     productCategory: '',
@@ -13,7 +14,12 @@ const UpdateProduct = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        if (!productID) {
+          console.error('ProductId is undefined');
+          return;
+        }
+
+        const response = await fetch(`http://localhost:3000/products/${productID}`);
         if (response.ok) {
           const productDetails = await response.json();
           setProduct(productDetails);
@@ -26,7 +32,7 @@ const UpdateProduct = () => {
     };
 
     fetchProductDetails();
-  }, [productId]);
+  }, [productID]);
 
   const handleUpdateProduct = async () => {
     if (!product.productName || !product.productCategory || !product.price) {
@@ -35,7 +41,7 @@ const UpdateProduct = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/products/${productId}`, {
+      const response = await fetch(`http://localhost:3000/products/${productID}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +55,6 @@ const UpdateProduct = () => {
 
       if (response.ok) {
         console.log('Product successfully updated');
-        // Redirect to ProductList after successful update
         navigate('/productlist');
       } else {
         console.error('Failed to update product');
