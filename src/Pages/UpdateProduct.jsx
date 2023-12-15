@@ -36,11 +36,11 @@ const UpdateProduct = () => {
   }, [productID]);
 
   const handleUpdateProduct = async () => {
-    if (!product.productName || !product.productCategory || !product.new_price || !product.oldPrice) {
+    if (!product.productName || !product.productCategory || !product.new_price || !product.old_price) {
       alert('Please fill in all fields');
       return;
     }
-
+  
     try {
       const response = await fetch(`http://localhost:3000/products/${productID}`, {
         method: 'PUT',
@@ -51,11 +51,11 @@ const UpdateProduct = () => {
           productName: product.productName,
           productCategory: product.productCategory,
           image: product.image,
-          old_price: parseFloat(product.oldPrice),
-          new_price: parseFloat(product.price),
+          old_price: parseFloat(product.old_price),
+          new_price: parseFloat(product.new_price),
         }),
       });
-
+  
       if (response.ok) {
         console.log('Product successfully updated');
         navigate('/productlist');
@@ -66,7 +66,7 @@ const UpdateProduct = () => {
       console.error('Error:', error);
     }
   };
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProduct({
@@ -104,7 +104,7 @@ const UpdateProduct = () => {
         Enter price:
         <input
           type='number'
-          name='price'
+          name='new_price'
           value={product.new_price}
           onChange={handleInputChange}
         />
