@@ -17,8 +17,8 @@ import Transaction from './Pages/Transaction';
 import AddProduct from './Pages/AddProduct'
 import ProductList from './Pages/ProductList';
 import UpdateProduct from './Pages/UpdateProduct';
-//import TestSubject from './Pages/TestSubject';
-//elements of the navbar
+
+
 
 function App() {
   return (
@@ -41,7 +41,6 @@ function App() {
           <Route path='/addproduct' element={<AddProduct/>}/>
           <Route path='/productlist' element={<ProductList/>}/>
           <Route path='/updateproduct/:productID' element={<UpdateProduct/>}/>
-          {/*<Route path='/Testsubject' element={<TestSubject/>}/>*/}
       </Routes>
         <Footer/>
       </BrowserRouter>

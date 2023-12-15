@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './CSS/ProductList.css';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -27,38 +28,36 @@ const ProductList = () => {
   return (
     <div>
       <h1>Product Items</h1>
+      <div className="add-button-container">
+        <button>
+          <Link to="/addproduct">Add </Link>
+        </button>
+      </div>
       <table>
         <thead>
           <tr>
-            <th>Image</th>
             <th>Name</th>
             <th>Category</th>
             <th>New Price</th>
             <th>Old Price</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {products.map(product => (
             <tr key={product.productID}>
-              <td>
-                {/*<img src={product.image} alt={product.productName} style={{ width: '50px', height: '50px' }} />*/}
-                <p>{product.imageName}</p> {/* Show the name of the image */}
-              </td>
               <td>{product.productName}</td>
               <td>{product.productCategory}</td>
               <td>{product.new_price}</td>
               <td>{product.old_price}</td>
               <td>
-              <button className="delete" onClick={() => handleDelete(product.productID)}>Delete</button>
-              <button className="update"><Link to={`/updateproduct`}>Update</Link></button>
+                <button className="delete" onClick={() => handleDelete(product.productID)}>Delete</button>
+                <button className="update"><Link to={`/updateproduct/${product.productID}`}>Update</Link></button>
               </td>   
             </tr>
           ))}
         </tbody>
       </table>
-      <button>
-        <Link to="/addproduct">Add </Link>
-      </button>
     </div>
   );
 };

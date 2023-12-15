@@ -104,7 +104,7 @@ const UpdateProduct = () => {
         Enter price:
         <input
           type='number'
-          name='new_price'
+          name='price'
           value={product.new_price}
           onChange={handleInputChange}
         />
@@ -114,7 +114,7 @@ const UpdateProduct = () => {
         <input
           type='number'
           name='old_price'
-          value={product.oldPrice}
+          value={product.old_price}
           onChange={handleInputChange}
         />
       </label>
